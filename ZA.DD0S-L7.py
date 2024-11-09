@@ -3,10 +3,10 @@ import os
 import sys
 import getopt
 import time
+import threading 
 from queue import Queue
 from threading import Thread
 
-_db_lock=threading.Lock()
 
 os.system("clear")
 
