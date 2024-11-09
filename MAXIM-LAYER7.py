@@ -49,7 +49,7 @@ class MyThread(Thread,):
         self.kill_received = False
     def run(self):
         while not self.kill_received:
-            server = socket.gethostbyname((*self._args, **self._kwargs))
+            server = socket.gethostbyname((*self.site)
             post = 'x' * 9999
             file = '/'
 
