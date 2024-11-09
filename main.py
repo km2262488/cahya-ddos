@@ -135,7 +135,7 @@ def main(argv):
     try:
         opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help",
 "type"])
-    except getop.(getopt.GetoptError,) err:
+    except getop.GetoptError, (err):
         print str(err)
         sys.exit(2)
     output = None
