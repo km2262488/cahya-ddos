@@ -22,25 +22,27 @@ class bcolors:
     RESET = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+    
 
 # Clear termunal screen
-os system('clear)
+os.system('clear')
 
 
 # Function to diplay header
 def display_header():
     header_lines = (" ")
-print("\033[33m @             \033[0m")
-print("\033[33m @            \033[0m")
-print("\033[33m @            \033[0m")
-print("\033[33m @            \033[0m")
-print("\033[92m @             \033[0m")
-print("\033[92m @              \033[0m")
-print("\033[92m @             \033[0m")
-print("\033[92m @ @ @ @ @     \033[0m")
+print("\033[33m    @@       @@                    \033[0m")
+print("\033[33m  @@ • @@ @@   @@                 \033[0m")
+print("\033[33m @@     @@      @@                \033[0m")
+print("\033[33m @@     @@      @@                \033[0m")
+print("\033[92m @@     @@      @@               \033[0m")
+print("\033[92m @@      •      @@               \033[0m")
+print("\033[92m @@      •      @@              \033[0m")
+print("\033[92m @@             @@              \033[0m")
     
 
 if len(sys.argv) < 4:
+   print("")
    sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
 
 ip = sys.argv[1]
@@ -109,8 +111,8 @@ while True:
         t.start()
         s.start()
     except KeyboardInterrupt:
-        print "Stopping Flood!"
+        print ("Stopping Flood!")
         sys.exit()
     except socket.error, msg:
-        print "Socket Couldn't Connect"
+        print ("Socket Couldn't Connect")
         sys.exit()
