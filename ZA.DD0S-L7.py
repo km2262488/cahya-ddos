@@ -2,6 +2,7 @@
 # _*_ coding: uts-8 _*_
 import os
 import sys
+import request
 import re
 import getopt
 import time
