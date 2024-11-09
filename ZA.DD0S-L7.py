@@ -31,14 +31,14 @@ os.system('clear')
 # Function to diplay header
 def display_header():
     header_lines = (" ")
-print("\033[33m       ⁶ ⁶     ⁶ ⁵                  \033[0m")
-print("\033[33m       ⁶  ⁶   ⁵  ⁵          \033[0m")
-print("\033[33m       ⁶   ⁶ ⁵   ⁵                   \033[0m")
-print("\033[33m       ⁶    ⁶    ⁵                  \033[0m")
-print("\033[92m       ⁶         ⁵               \033[0m")
-print("\033[92m       ⁸         ⁵                \033[0m")
-print("\033[92m       ⁸         ⁵               \033[0m")
-print("\033[92m       ⁹         ⁵                    \033[0m")
+print("\033[33m       ⁶ ⁶       ⁶ ⁵  ⁷ ⁶ ⁶ ⁶ ⁵               \033[0m")
+print("\033[33m       ⁶  ⁶     ⁵  ⁵  ⁵         ⁵      \033[0m")
+print("\033[33m       ⁶   ⁶   ⁵   ⁵  ⁵         ⁵         \033[0m")
+print("\033[33m       ⁶    ⁶ ⁵    ⁵  ⁵         ⁵       \033[0m")
+print("\033[92m       ⁶     ⁶     ⁵  ⁵ ⁵ ⁴ ⁵ ⁵             \033[0m")
+print("\033[92m       ⁸           ⁵  ⁵      ⁴          \033[0m")
+print("\033[92m       ⁸           ⁵  ⁵       ⁵        \033[0m")
+print("\033[92m       ⁹           ⁵  ⁵        ⁵             \033[0m")
     
 
 if len(sys.argv) < 4:
@@ -113,6 +113,6 @@ while True:
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
-    except ('socket.error' (msg)
+    except 'socket.error' (msg):
         print ("Socket Couldn't Connect")
         sys.exit()
