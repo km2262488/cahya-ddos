@@ -1,5 +1,5 @@
 #!usr/bin/python
-# _*_ coding: uts-8 _*_
+# _*_ coding: utf-8 _*_
 import os
 import sys
 import request
