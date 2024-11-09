@@ -117,7 +117,7 @@ def da_delegator(SITE,DOS_TYPE):
                 threads = [t.join(1) for t in threads if t is not
 None and t.isAlive()]
             except KeyboardInterrupt:
-                print "Ctrl-c received! Sending kill to threads... Just close The Terminal"
+                print ("Ctrl-c received! Sending kill to threads... Just close The Terminal")
                 for t in threads:
                     t.kill_received = True
                     sys.exit(2)
