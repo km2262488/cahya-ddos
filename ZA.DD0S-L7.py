@@ -118,7 +118,7 @@ def main(argv):
         print ('\033[94mZA.DD0S #L7 DDOS Tool v.1\033[0m'.center(60,'-'))
         print ('=') == 60
         print ('\033[33mFor GET DOS - USAGE: ZA.DD0S-L7.py -t get http://example.com\033[0m')
-        print ('\033[92mFor POST DOS - USAGE: ZA.DD0S-L7.py -t post http://example.com'\033[0m)
+        print ('\033[92mFor POST DOS - USAGE: ZA.DD0S-L7.py -t post http://example.com\033[0m')
         sys.exit(2)
     if not argv:
         usage()
