@@ -1,14 +1,14 @@
 #!/usr/bin/python
-# _*_ coding: utf-8 _*_
+
+import Utilities
 import os
 import sys
-import socket
-import time
-import re
-import random
 import getopt
-import string
+import time
+from queue import Queue
 from threading import Thread
+
+_db_lock=threading.Lock()
 
 os.system("clear")
 
