@@ -6,7 +6,8 @@ import socket
 import time
 import getopt
 import re
-import tqdm
+import random
+import getopt
 import string
 from threading import Thread
 
@@ -133,9 +134,8 @@ def main(argv):
     if not argv:
         usage()
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help",
-"type"])
-    except getop.GetoptError, (err):
+        opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help","type"])
+    except (getop.GetoptError, (err):
         print str(err)
         sys.exit(2)
     output = None
@@ -160,3 +160,5 @@ def main(argv):
 
 if __name__=="__main__":
     main(sys.argv[1:])
+
+
