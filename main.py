@@ -110,7 +110,7 @@ def da_delegator(SITE,DOS_TYPE):
     threads = []
     for num in range(thread_count):
         thr1=MyThread(SITE,DOS_TYPE)
-        print("\n--- Initiating Attack ---")
+        print("\033[33m--- Initiating Attack ---033[0m")
         thr1.start()
         threads.append(thr1)
         #thr1.join()
