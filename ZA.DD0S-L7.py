@@ -1,6 +1,4 @@
-#!/usr/bin/python
-
-import Utilities
+#!usr/bin/python
 import os
 import sys
 import getopt
@@ -31,11 +29,11 @@ class bcolors:
 # CLEAR
 os.system("clear")
 print(" ")
-print("\033[96m  @ @ @ @     @ @    \033[0m")
+print("\033[96m  @ @ @ @     @ @      \033[0m")
 print("\033[96m       @    @     @   \033[0m")
 print("\033[97m     @      @ @ @ @       \033[0m")
-print("\033\97m   @ @ @ @  @     @ \033[0m")
-print(" ")
+print("\033\97m   @ @ @ @  @     @       \033[0m")
+print("\033\97m      \033[0m")
 print("\033[92m        @ @ @ @     @ @ @ @        @ @ @       @ @ @ @   \033[0m")
 print("\033[92m        @       @   @       @    @       @   @           \033[0m")
 print("\033[92m        @        @  @        @  @         @  @           \033[0m")
