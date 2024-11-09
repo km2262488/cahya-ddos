@@ -1,6 +1,8 @@
 #!usr/bin/python
+# _*_ coding: uts-8 _*_
 import os
 import sys
+import re
 import getopt
 import time
 import threading 
