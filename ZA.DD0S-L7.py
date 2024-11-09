@@ -57,11 +57,8 @@ print("\033[95m                                                               \0
 print("\033[95m                                                                \033[0m")
 print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ    \033[0m")    
 class MyThread(Thread,):
-    thred = threading.Thread()
-    thread.start()
     def __init__(self,SITE, DOS_TYPE):
         self.thread = thred
-        Thread.__init__(self)
         self.method = DOS_TYPE
         self.site = SITE
         self.kill_received = False
