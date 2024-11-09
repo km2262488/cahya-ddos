@@ -7,8 +7,7 @@ import re
 import getopt
 import time
 import threading 
-from queue import Queue
-from threading import Thread
+ 
 
 # Color
 class bcolors:
@@ -49,7 +48,7 @@ print("\033[95m                                                               \0
 print("\033[95m                                                               \033[0m")
 print("\033[95m                                                                \033[0m")
 print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ    \033[0m")    
-class MyThread(Thread,):
+t = threading.Thread(target=self,SITE, DOS_TYPE,):
     def __init__(self,SITE, DOS_TYPE):
         self.thread = Thread
         Thread.__init__(self)
@@ -99,7 +98,7 @@ def da_delegator(SITE,DOS_TYPE):
     print ('=') == 60
     threads = []
     for num in range(thread_count):
-        thr1=MyThread(SITE,DOS_TYPE)
+        thr1=Thread(SITE,DOS_TYPE)
         print("\033[97m[\033[92m+\033[97m]  \033[94m--- Initiating Attack ---\033[0m")
         thr1.start()
         threads.append(thr1)
