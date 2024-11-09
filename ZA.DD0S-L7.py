@@ -52,7 +52,7 @@ print("\033[33mΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠΠ�
 class MyThread(Thread,):
     def __init__(self,SITE, DOS_TYPE):
         self.thread = Thread
-        Thread._init_(self)
+        Thread.__init__(self)
         self.method = DOS_TYPE
         self.site = SITE
         self.kill_received = False
