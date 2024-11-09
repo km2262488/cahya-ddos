@@ -105,7 +105,7 @@ def da_delegator(SITE,DOS_TYPE):
     threads = []
     for num in range(thread_count):
         thr1=MyThread(SITE,DOS_TYPE)
-        print 'start - %s' % thr1
+        print ('start - %s' % thr1)
         thr1.start()
         threads.append(thr1)
         #thr1.join()
