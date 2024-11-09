@@ -135,7 +135,7 @@ def main(argv):
     try:
         opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help",
 "type"])
-    except getopt.GetoptError, err:
+    except getop.(getopt.GetoptError,) err:
         print str(err)
         sys.exit(2)
     output = None
@@ -156,7 +156,7 @@ def main(argv):
             usage()
             sys.exit()
         else:
-            assert False, "unhandled option"
+            assert False, ("unhandled option")
 
 if __name__=="__main__":
     main(sys.argv[1:])
