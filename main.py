@@ -30,8 +30,16 @@ class bcolors:
     ZH = '\033[97m'
 os.system("clear")
 print(" ")
-print(" ")
-print(" ")
+print("\033[31m @@ @       @ @         @@         @      @@  @@  @@ @     @ @     \033[0m")
+print("\033[31m @@   @   @   @        @@ @         @    @@   @@  @@  @   @  @        \033[0m")
+print("\033[31m @@     @     @       @@   @         @  @@    @@  @@  • @ •  @      \033[0m")
+print("\033[31m @@     @     @      @@     @          @@     @@  @@  • @ •  @   \033[0m")
+print("\033[33m @@     @     @     @@       @        @@      @@  @@    @    @ \033[0m")
+print("\033[33m @@     @     @    @@ @ @ @ @ @      @@  @    @@  @@    •    @  \033[0m")
+print("\033[33m @@           @   @@           @    @@    @   @@  @@    •    @    \033[0m")
+print("\033[33m @@           @  @@             @  @@      @  @@  @@         @     \033[0m")
+print("\033[33m                  \033[0m")
+print("\033[33m                  \033[0m")
 print(" ")
 print(" ")
 print(" ")
@@ -124,15 +132,15 @@ def main(argv):
         print ('=') == 60
         print ('Maxim-DD0S #Layer7 DDOS Tool v.1'.center(60,'-'))
         print ('=') == 60
-        print ('For GET DOS - USAGE: Layer7.py -t get http://example.com')
-        print ('For POST DOS - USAGE: Layer7.py -t post http://example.com')
+        print ('For GET DOS - USAGE: MaximLayer.py -t get http://example.com')
+        print ('For POST DOS - USAGE: MaximLayer7.py -t post http://example.com')
         sys.exit(2)
     if not argv:
         usage()
     try:
         opts, args = getopt.getopt(sys.argv[1:], "t:h", ["help","type"])
-    except (getop.GetoptError, (err)
-        print str(err)
+    except getop.GetoptError (err):
+        print ('str(err')
         sys.exit(2)
     output = None
     verbose = False
