@@ -10,9 +10,6 @@ import threading
 from queue import Queue
 from threading import Thread
 
-
-os.system("clear")
-
 # Color
 class bcolors:
     ZA = '\033[97m'
@@ -32,11 +29,6 @@ class bcolors:
 # CLEAR
 os.system("clear")
 print(" ")
-print("\033[96m  @ @ @ @     @ @      \033[0m")
-print("\033[96m       @    @     @   \033[0m")
-print("\033[97m     @      @ @ @ @       \033[0m")
-print("\033\97m   @ @ @ @  @     @       \033[0m")
-print("\033\97m      \033[0m")
 print("\033[92m        @ @ @ @     @ @ @ @        @ @ @       @ @ @ @   \033[0m")
 print("\033[92m        @       @   @       @    @       @   @           \033[0m")
 print("\033[92m        @        @  @        @  @         @  @           \033[0m")
