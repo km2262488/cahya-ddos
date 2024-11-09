@@ -40,25 +40,6 @@ print("\033[33m @@           @   @@           @    @@    @   @@  @@    •    @ 
 print("\033[33m @@           @  @@             @  @@      @  @@  @@         @     \033[0m")
 print("\033[33m                  \033[0m")
 print("\033[33m                  \033[0m")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-print(" ")
-
-
 
 class MyThread(Thread,):
     def __init__(self,SITE, DOS_TYPE):
@@ -110,7 +91,7 @@ def da_delegator(SITE,DOS_TYPE):
     threads = []
     for num in range(thread_count):
         thr1=MyThread(SITE,DOS_TYPE)
-        print("\033[33m--- Initiating Attack ---033[0m")
+        print("\033[33m[\033[1m+[\033[33m]--- Initiating Attack ---033[0m")
         thr1.start()
         threads.append(thr1)
         #thr1.join()
