@@ -109,7 +109,8 @@ while True:
         u.start()
         t.start()
         s.start()
-        print("\033[33m[\033[1m+\033[33m]\033[92mRequest " +str()+ "  \033[33mto Sent attack \033[97m" +url+ "\033[0m" )
+        u = += 1
+        print("\033[33m[\033[1m+\033[33m]\033[92mRequest " +str(u)+ "  \033[33mto Sent attack \033[97m" +url+ "\033[0m" )
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
