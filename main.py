@@ -32,14 +32,13 @@ os.system('clear')
 # Function to diplay header
 def display_header():
     header_lines = (" ")
-print("\033[33m       ⁶ ⁶       ⁶ ⁵  ⁷ ⁶ ⁶ ⁶ ⁵               \033[0m")
-print("\033[33m       ⁶  ⁶     ⁵  ⁵  ⁵         ⁵      \033[0m")
-print("\033[33m       ⁶   ⁶   ⁵   ⁵  ⁵         ⁵         \033[0m")
-print("\033[33m       ⁶    ⁶ ⁵    ⁵  ⁵         ⁵       \033[0m")
-print("\033[92m       ⁶     ⁶     ⁵  ⁵ ⁵ ⁴ ⁵ ⁵             \033[0m")
-print("\033[92m       ⁸           ⁵  ⁵      ⁴          \033[0m")
-print("\033[92m       ⁸           ⁵  ⁵       ⁵        \033[0m")
-print("\033[92m       ⁹           ⁵  ⁵        ⁵             \033[0m")
+print("\033[33m      ∅ ∅     ∅       ∅      ∅ ∅        ∅ ∅ ∅   \033[0m")            
+print("\033[33m    ∅     ∅   ∅       ∅    ∅     ∅     ∅       \033[0m")
+print("\033[33m   ∅       ∅  ∅       ∅   ∅       ∅   ∅        \033[0m")
+print("\033[92m   ∅       ∅   ∅     ∅    ∅       ∅    ∅         \033[0m")
+print("\033[92m   ∅  ∅ ∅ ∅     ∅ ∅      ∅  ∅ ∅ ∅      ∅ ∅       \033[0m")
+print("\033[92m   ∅       ∅      ∅       ∅       ∅           ∅   \033[0m")
+print("\033[92m   ∅       ∅      ∅       ∅       ∅     ∅ ∅ ∅   \033[0m")
 
 
 if len(sys.argv) < 4:
