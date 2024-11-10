@@ -26,14 +26,22 @@ class bcolors:
     
 os.system('clear')
 print("")
-print("\033[03m
-print("\033[03m
-print("\033[03m
-print("\033[03m
-print("\033[03m
-            
+print("\033[03m         ∅∅   ∅∅            ∅     ∅∅         ∅∅ ∅ ∅    \033[0m")
+print("\033[03m        ∅∅ ∅   ∅∅         ∅     ∅∅ ∅      ∅∅           \033[0m")
+print("\033[03m       ∅∅   ∅    ∅∅      ∅     ∅∅   ∅     ∅∅           \033[0m")
+print("\033[03m      ∅∅     ∅     ∅∅  ∅      ∅∅     ∅      ∅∅         \033[0m")
+print("\033[92m     ∅∅       ∅      ∅∅      ∅∅        ∅       ∅ ∅ ∅   \033[0m")
+print("\033[92m    ∅∅  ∅ ∅ ∅ ∅     ∅∅     ∅∅ ∅ ∅ ∅  ∅           ∅∅  \033[0m")
+print("\033[92m   ∅∅           ∅    ∅∅    ∅∅            ∅          ∅∅  \033[0m")
+print("\033[92m  ∅∅             ∅   ∅∅   ∅∅              ∅  ∅ ∅ ∅∅    \033[0m")
+print("\033[97mm=============================================================\033[0m")
+print("\033[03m          BIRRUH BIDDAM NAFDHIKA YAA AQSHA                     \033[0m")
+print("\033[03m                  design By: Za'99                             \033[0m")
+print("\033[03m                                                               \033[0m")
+print("\033[03m                                                              \033[0m")
+print("\033[97m==============================================================\033[0m")
+print("\033[03m \033[0m")        
 if len(sys.argv) < 4:
-    print ("")
     sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
 
 ip = sys.argv[1]
@@ -101,9 +109,12 @@ while True:
         u.start()
         t.start()
         s.start()
+        print("\033[33m[\033[1m+\033[33m]\033[92mRequest " +str()+ "  \033[33mto Sent attack \033[97m" +url+ "\033[0m" )
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
     except ("socket.error msg"):
         print ("Socket Couldn't Connect")
         sys.exit()
+
+
