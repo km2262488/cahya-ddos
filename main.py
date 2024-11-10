@@ -31,14 +31,14 @@ os.system('clear')
 
 # Function to diplay header
 def display_header():
-header_lines = (" ")
+print(" ")
 print("\033[33m       ∅ ∅     ∅∅         ∅      ∅ ∅         ∅∅ ∅ ∅   \033[0m")            
 print("\033[33m    ∅∅     ∅   ∅∅        ∅    ∅∅     ∅     ∅∅           \033[0m")
 print("\033[33m   ∅∅       ∅  ∅∅        ∅   ∅∅       ∅   ∅∅          \033[0m")
 print("\033[33m   ∅∅       ∅   ∅∅      ∅    ∅∅       ∅    ∅∅            \033[0m")
 print("\033[92m   ∅∅  ∅ ∅ ∅      ∅∅ ∅      ∅∅ ∅ ∅  ∅      ∅ ∅       \033[0m")
 print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅         ∅∅   \033[0m")
-print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅           ∅∅  \033[0m")
+print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅          ∅∅  \033[0m")
 print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅    ∅ ∅ ∅∅    \033[0m")
 
 if len(sys.argv) < 4:
