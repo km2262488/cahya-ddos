@@ -31,15 +31,15 @@ os.system('clear')
 
 # Function to diplay header
 def display_header():
-    header_lines = (" ")
-print("\033[33m      ∅ ∅     ∅       ∅      ∅ ∅        ∅ ∅ ∅   \033[0m")            
-print("\033[33m    ∅     ∅   ∅       ∅    ∅     ∅     ∅       \033[0m")
-print("\033[33m   ∅       ∅  ∅       ∅   ∅       ∅   ∅        \033[0m")
-print("\033[92m   ∅       ∅   ∅     ∅    ∅       ∅    ∅         \033[0m")
-print("\033[92m   ∅  ∅ ∅ ∅     ∅ ∅      ∅  ∅ ∅ ∅      ∅ ∅       \033[0m")
-print("\033[92m   ∅       ∅      ∅       ∅       ∅           ∅   \033[0m")
-print("\033[92m   ∅       ∅      ∅       ∅       ∅     ∅ ∅ ∅   \033[0m")
-
+header_lines = (" ")
+print("\033[33m       ∅ ∅     ∅∅         ∅      ∅ ∅         ∅∅ ∅ ∅   \033[0m")            
+print("\033[33m    ∅∅     ∅   ∅∅        ∅    ∅∅     ∅     ∅∅           \033[0m")
+print("\033[33m   ∅∅       ∅  ∅∅        ∅   ∅∅       ∅   ∅∅          \033[0m")
+print("\033[33m   ∅∅       ∅   ∅∅      ∅    ∅∅       ∅    ∅∅            \033[0m")
+print("\033[92m   ∅∅  ∅ ∅ ∅      ∅∅ ∅      ∅∅ ∅ ∅  ∅      ∅ ∅       \033[0m")
+print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅         ∅∅   \033[0m")
+print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅           ∅∅  \033[0m")
+print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅    ∅ ∅ ∅∅    \033[0m")
 
 if len(sys.argv) < 4:
     print("\033[97mSerangan yang bagus untuk membanjiri server\033[0m")
@@ -133,3 +133,5 @@ while True:
     except ('socket.error msg'):
         print ("Socket Couldn't Connect")
         sys.exit()
+
+
