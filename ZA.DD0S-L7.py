@@ -42,7 +42,7 @@ print("\033[92m       ⁹           ⁵  ⁵        ⁵             \033[0m")
 
 
 if len(sys.argv) < 4:
-    print "Seangan yang bagus untuk membanjiri server"
+    print("\033[97mSerangan yang bagus untuk membanjiri server\033[0m")
     sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
 
 ip = sys.argv[1]
