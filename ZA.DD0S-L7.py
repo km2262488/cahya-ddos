@@ -77,6 +77,7 @@ class tcp(threading.Thread):
             try:
                 bytes = random._urandom(self.size)
                 socket.connect(self.ip, self.port)
+                    self.port = random.randrange(1, 65535)
                 socket.setblocking(0)
                 socket.sendto(bytes,(self.ip, self.port))
                 t = tcp(ip,port,size,packets)
