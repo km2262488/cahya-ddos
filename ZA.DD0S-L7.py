@@ -109,6 +109,7 @@ while True:
             u = udp(ip,port,size,packets)       
             s = syn(ip,port,packets)
             t.start()
+            print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mto Attack target" +str()+ "   \033[97m" +ip+ "\033[0m" )
             u.start()
             s.start()
     except KeyboardInterrupt:
