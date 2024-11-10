@@ -60,7 +60,7 @@ class syn(threading.Thread):
     def run(self):
         for i in range(self.packets):
             try:
-                self.syn.connect((self.ip, self.port)
+                self.syn.connect(self.ip, self.port)
             except:
                 pass
 
