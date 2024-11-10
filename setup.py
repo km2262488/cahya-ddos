@@ -8,7 +8,7 @@ if c == "0":
      os.system("pip install torch")
      os.system("pip install wheel")
      os.system("pip install flake8 pytest")
- elif c == "1":
+elif c == "1":
      os.system("apt-get install docker")
      os.system("pip3 install torch")
      os.system("pip3 install wheel")
