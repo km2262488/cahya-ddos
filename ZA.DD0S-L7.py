@@ -117,6 +117,6 @@ while True:
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
-    except socket.error, msg:
+    except ('socket.error, msg'):
         print "Socket Couldn't Connect"
         sys.exit()
