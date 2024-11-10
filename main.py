@@ -5,6 +5,7 @@ import socket
 import sys
 import time
 import threading
+import string
 import random
  
 # Color
@@ -130,6 +131,6 @@ while True:
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
-    except ('socket.error, msg'):
+    except ('socket.error msg'):
         print ("Socket Couldn't Connect")
         sys.exit()
