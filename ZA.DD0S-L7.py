@@ -73,7 +73,7 @@ class tcp(threading.Thread):
         self.tcp = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         
          
- threading.Thread.__init__(self)
+threading.Thread.__init__(self)
     def run(self):
         for i in range(self.packets):
             try:
