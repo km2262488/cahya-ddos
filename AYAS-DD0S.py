@@ -104,7 +104,7 @@ while True:
         print("\033[33m[\033[1m+\033[33m]\033[92mBismillah " +str()+ "  \033[33mPacket sent to \033[97m:::.. " +ip+ " \033[0m" )
         s = syn(ip,port,packets)
         s.start()
-        print("\033[33m[\033[1m+\033[33m]\033[92mBismillah " +str()+ "  \033[33mtPacket sent to \033[97m::::... " +ip+ " \033[0m" )
+        print("\033[33m[\033[1m+\033[33m]\033[92mBismillah " +str()+ "  \033[33mPacket sent to \033[97m::::... " +ip+ " \033[0m" )
     except KeyboardInterrupt:
         print ("Stopping Flood!")
         sys.exit()
